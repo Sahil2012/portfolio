@@ -76,7 +76,7 @@ const Hero = () => {
 
           {/* Right Portrait - Aligned to bottom */}
           <div className="absolute flex bottom-0 right-0 justify-center lg:justify-end items-end animate-fadeIn animate-delay-600 h-full w-1/2">
-            <div className="relative w-full h-full portrait-shadow">
+            <div className="relative w-full h-full">
               <Image
                 src="/sahil-1.png"
                 alt={siteData.profile.fullName}

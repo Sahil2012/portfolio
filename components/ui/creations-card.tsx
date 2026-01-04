@@ -2,7 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
-import { motion, useMotionTemplate, useMotionValue } from "framer-motion";
+import { motion, useMotionTemplate, useMotionValue } from "motion/react";
 import { cn } from "@/lib/utils";
 import { ArrowRight } from "lucide-react";
 

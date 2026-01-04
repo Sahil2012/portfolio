@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
+import SmoothScrolling from "@/components/SmoothScrolling";
 import { ThemeProvider } from "@/components/providers";
 
 const inter = Inter({
@@ -30,12 +31,14 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <div className="min-h-screen h-screen bg-background font-sans transition-colors">
-            <Header />
-            <main className="relative top-16 h-[calc(100%-4rem)] w-full">
-              {children}
-            </main>
-          </div>
+          {/* <SmoothScrolling> */}
+            <div className="min-h-screen h-screen bg-background font-sans transition-colors">
+              <Header />
+              <main className="relative top-16 h-[calc(100%-4rem)] w-full">
+                {children}
+              </main>
+            </div>
+          {/* </SmoothScrolling> */}
         </ThemeProvider>
       </body>
     </html>

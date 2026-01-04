@@ -3,7 +3,7 @@
 import React, { useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, useScroll, useTransform } from "motion/react";
 import { cn } from "@/lib/utils";
 import { ArrowRight } from "lucide-react";
 
