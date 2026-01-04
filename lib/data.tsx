@@ -290,7 +290,7 @@ const sahilData = {
     { label: "Creations", href: "/creations" },
     { label: "Work", href: "/work" },
     { label: "Writings", href: "/writings" },
-    { label: "Hire Me", href: "/contact" },
+    { label: "Contact", href: "/contact" },
   ],
   contact: {
     email: "sahilhsgupta7@gmail.com",
@@ -328,12 +328,34 @@ const sahilData = {
     linkedin: "https://www.linkedin.com/in/sahil-gupta7/",
   },
   home: {
-    hero: {
-      currentlyBuilding: "Currently building",
-      and: "and",
-      while: ", while engineering production systems at",
-      image: "/sahil-1.png",
-    },
+    title: "Building & shipping\nreal-world products.",
+    subline: (
+      <span>
+        Currently building{" "}
+        <Link
+          href="https://Naukri-outreach.vercel.app/"
+          className="hover:opacity-80 transition-opacity"
+        >
+          <Highlight className="text-foreground">Naukri Outreach</Highlight>
+        </Link>{" "}
+        and{" "}
+        <Link
+          href="https://novacraftsai.com/"
+          className="hover:opacity-80 transition-opacity"
+        >
+          <Highlight className="text-foreground">NovaCraftsAI</Highlight>
+        </Link>
+        , while engineering production systems at{" "}
+        <Link
+          href="https://www.hsbc.com/"
+          className="hover:opacity-80 transition-opacity"
+        >
+          <Highlight className="text-foreground">HSBC</Highlight>
+        </Link>
+        .
+      </span>
+    ),
+    image: "/sahil-1.png",
     cta: {
       text: "Let's connect",
     },
