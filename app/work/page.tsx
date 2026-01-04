@@ -1,11 +1,9 @@
 import ContentLayout from "@/components/ContentLayout";
-import Headline from "@/components/Headline";
-import { Carousel, Card } from "@/components/ui/apple-cards-carousel";
+import { Card, Carousel } from "@/components/ui/apple-cards-carousel";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { siteData } from "@/lib/data";
 import { IconArrowNarrowRight } from "@tabler/icons-react";
-import { motion } from "motion/react";
 import Image from "next/image";
 
 export default function WorkPage() {

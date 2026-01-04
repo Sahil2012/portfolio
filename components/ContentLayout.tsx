@@ -5,9 +5,9 @@ import { cn } from "@/lib/utils";
 
 interface ContentLayoutProps {
   children: ReactNode;
-  title: string;
-  subline1: string;
-  subline2: string;
+  title: ReactNode;
+  subline1: ReactNode;
+  subline2: ReactNode;
   contentInContaienr?: boolean;
 }
 

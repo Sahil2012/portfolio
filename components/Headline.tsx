@@ -1,11 +1,12 @@
 "use client";
 
 import { motion } from "motion/react";
+import { ReactNode } from "react";
 
 interface HeadlineProps {
-  title: string;
-  subline1: string;
-  subline2: string;
+  title: ReactNode;
+  subline1: ReactNode;
+  subline2: ReactNode;
 }
 
 const Headline = ({ title, subline1, subline2 }: HeadlineProps) => {
