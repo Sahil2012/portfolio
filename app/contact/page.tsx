@@ -1,13 +1,13 @@
 "use client";
 
 import ContentLayout from "@/components/ContentLayout";
-import { siteData } from "@/lib/data";
+import { data } from "@/lib/data";
 import { ArrowUpRight, Mail, Calendar } from "lucide-react";
 import Link from "next/link";
 import { motion } from "motion/react";
 
 export default function ContactPage() {
-  const { page } = siteData.contact;
+  const { page } = data.contact;
 
   return (
     <ContentLayout
@@ -26,14 +26,14 @@ export default function ContactPage() {
             className="flex flex-col gap-6"
           >
             <Link
-              href={siteData.profile.calLink}
+              href={data.calLink}
               target="_blank"
               rel="noopener noreferrer"
               className="group inline-flex flex-col gap-2 text-2xl md:text-3xl font-semibold text-foreground hover:text-foreground/70 transition-all duration-300 w-fit"
             >
               <span className="inline-flex items-center gap-3">
                 <Calendar className="w-8 h-8" />
-                {page.primaryCTA.text}
+                Book a call
               </span>
               <span className="h-0.5 bg-foreground w-0 group-hover:w-full transition-all duration-300 ease-out" />
             </Link>
@@ -57,10 +57,8 @@ export default function ContactPage() {
               {page.channels.map((channel) => {
                 const href =
                   channel.id === "email"
-                    ? `mailto:${siteData.contact.email}`
-                    : siteData.social[
-                        channel.id as keyof typeof siteData.social
-                      ];
+                    ? `mailto:${data.contact.email}`
+                    : data.social[channel.id as keyof typeof data.social];
                 const isExternal = channel.id !== "email";
                 const Icon = channel.id === "email" ? Mail : ArrowUpRight;
 
@@ -72,7 +70,9 @@ export default function ContactPage() {
                     rel={isExternal ? "noopener noreferrer" : undefined}
                     className="group flex items-center justify-between text-xl md:text-2xl font-medium text-foreground border-b border-border/50 py-5 hover:border-foreground/30 transition-all duration-300 relative"
                   >
-                    <span className="relative group-hover:translate-x-1 transition-transform duration-300">{channel.label}</span>
+                    <span className="relative group-hover:translate-x-1 transition-transform duration-300">
+                      {channel.label}
+                    </span>
                     <Icon className="w-5 h-5 relative transition-all duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 text-muted-foreground group-hover:text-foreground" />
                   </Link>
                 );

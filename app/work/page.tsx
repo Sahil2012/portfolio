@@ -2,16 +2,16 @@ import ContentLayout from "@/components/ContentLayout";
 import { Card, Carousel } from "@/components/ui/apple-cards-carousel";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { siteData } from "@/lib/data";
+import { data } from "@/lib/data";
 import { IconArrowNarrowRight } from "@tabler/icons-react";
 import Image from "next/image";
 
 export default function WorkPage() {
-  const cards = siteData.work.clientProjects.map((project, index) => (
+  const cards = data.work.clientProjects.map((project, index) => (
     <Card
       key={project.id}
       card={{
-        src: project.image || "/sahil-1.png", // Fallback
+        src: project.image || data.work.ui.fallbackImage,
         title: project.name,
         category: project.category,
         content: (
@@ -66,9 +66,9 @@ export default function WorkPage() {
 
   return (
     <ContentLayout
-      title="Work."
-      subline1="Projects I've worked on."
-      subline2="From automating job applications to crafting custom software solutions."
+      title={data.work.page.title}
+      subline1={data.work.page.subline1}
+      subline2={data.work.page.subline2}
       contentInContaienr={false}
     >
       <Carousel items={cards} />

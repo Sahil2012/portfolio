@@ -9,14 +9,15 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { siteData } from "@/lib/data";
+import { data } from "@/lib/data";
 import { ExternalLink } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 export default function CreationsPage() {
-  const [selectedCreation, setSelectedCreation] = useState<
-    (typeof siteData.creations)[number]
-  >(siteData.creations[0]);
+  const [selectedCreation, setSelectedCreation] =
+    useState<(typeof data.creations.items)[number]>(
+      data.creations.items[0]
+    );
   
   const imageContainerRef = useRef<HTMLAnchorElement>(null);
   const [imageHeight, setImageHeight] = useState<number>(0);
@@ -42,18 +43,18 @@ export default function CreationsPage() {
 
   return (
     <ContentLayout
-      title="Creations"
-      subline1="Tools that solve real problems."
-      subline2="From automating job applications to crafting custom software solutions."
+      title={data.creations.page.title}
+      subline1={data.creations.page.subline1}
+      subline2={data.creations.page.subline2}
     >
       <div className="grid grid-cols-1 lg:grid-cols-[24rem_1fr] gap-12 lg:gap-20">
         {/* Left Side - Accordion */}
         <Accordion
           type="single"
           collapsible
-          defaultValue={siteData.creations[0].id}
+          defaultValue={data.creations.items[0].id}
         >
-          {siteData.creations.map((creation) => (
+          {data.creations.items.map((creation) => (
             <AccordionItem key={creation.id} value={creation.id}>
               <AccordionTrigger onClick={() => setSelectedCreation(creation)}>
                 {creation.title}

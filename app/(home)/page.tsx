@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
-import { siteData } from "@/lib/data";
+import { data } from "@/lib/data";
 import { Highlight } from "@/components/ui/hero-highlight";
 import Link from "next/link";
 import { Github, Twitter, Calendar } from "lucide-react";
@@ -12,54 +12,29 @@ export default function Home() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center h-full">
           {/* Left Content - Positioned slightly above center */}
           <div className="flex flex-col gap-8 justify-center">
-            <h1 className="text-3xl md:text-5xl lg:text-6xl font-semibold tracking-tighter text-foreground leading-[1.1] animate-slideUp whitespace-pre-line">
-              {siteData.profile.title}
+            <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold tracking-tighter text-foreground leading-[1.1] animate-slideUp whitespace-pre-line">
+              {data.home.title}
             </h1>
 
-            <div className="text-xl md:text-2xl text-muted-foreground font-medium tracking-tight leading-snug animate-slideUp animate-delay-200">
-              Currently building{" "}
-              <Link
-                href="https://Naukri-outreach.vercel.app/"
-                className="hover:opacity-80 transition-opacity"
-              >
-                <Highlight className="text-foreground">
-                  Naukri Outreach
-                </Highlight>
-              </Link>{" "}
-              and{" "}
-              <Link
-                href="https://novacraftsai.com/"
-                className="hover:opacity-80 transition-opacity"
-              >
-                <Highlight className="text-foreground">NovaCraftsAI</Highlight>
-              </Link>
-              , while engineering production systems at{" "}
-              <Link
-                href={siteData.profile.companyUrl}
-                className="hover:opacity-80 transition-opacity"
-              >
-                <Highlight className="text-foreground">
-                  {siteData.profile.currentCompany}
-                </Highlight>
-              </Link>
-              .
+            <div className="text-lg md:text-xl max-w-md text-muted-foreground font-medium tracking-tight leading-snug animate-slideUp animate-delay-200">
+              {data.home.subline}
             </div>
 
             <div className="flex items-center gap-4 animate-slideUp animate-delay-400">
               <Button size="lg" variant="default" asChild>
                 <a
-                  href={siteData.profile.calLink}
+                  href={data.calLink}
                   target="_blank"
                   rel="noopener noreferrer"
                 >
                   <Calendar className="w-4 h-4" />
-                  Let&apos;s connect
+                  {data.home.cta.text}
                 </a>
               </Button>
 
               <div className="flex items-center gap-2">
                 <Link
-                  href={siteData.social.github}
+                  href={data.social.github}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="p-3 rounded-full hover:bg-muted transition-colors"
@@ -67,7 +42,7 @@ export default function Home() {
                   <Github className="w-5 h-5" />
                 </Link>
                 <Link
-                  href={siteData.social.twitter}
+                  href={data.social.twitter}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="p-3 rounded-full hover:bg-muted transition-colors"
@@ -82,8 +57,8 @@ export default function Home() {
           <div className="absolute flex bottom-0 right-0 justify-center lg:justify-end items-end animate-fadeIn animate-delay-600 h-full w-1/2">
             <div className="relative w-full h-full">
               <Image
-                src="/sahil-1.png"
-                alt={siteData.profile.fullName}
+                src={data.home.image}
+                alt={data.fullName}
                 fill
                 style={{
                   filter:

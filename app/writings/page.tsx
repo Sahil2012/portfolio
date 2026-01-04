@@ -1,7 +1,7 @@
 "use client";
 
 import ContentLayout from "@/components/ContentLayout";
-import { siteData } from "@/lib/data";
+import { data } from "@/lib/data";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import Link from "next/link";
 import { Calendar, Clock, ArrowUpRight } from "lucide-react";
@@ -11,12 +11,12 @@ import { Badge } from "@/components/ui/badge";
 export default function WritingsPage() {
   return (
     <ContentLayout
-      title={siteData.writings.title}
-      subline1={siteData.writings.subline1}
-      subline2={siteData.writings.subline2}
+      title={data.writings.title}
+      subline1={data.writings.subline1}
+      subline2={data.writings.subline2}
     >
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 pb-20">
-        {siteData.writings.articles.map((article) => (
+        {data.writings.articles.map((article) => (
           <Link
             key={article.id}
             href={article.url}

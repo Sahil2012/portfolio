@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { siteData } from "@/lib/data";
+import { data } from "@/lib/data";
 import { ThemeToggle } from "./theme-toggle";
 
 const Header = () => {
@@ -11,20 +11,20 @@ const Header = () => {
         <div className="container mx-auto px-8 h-full">
           <div className="flex items-center justify-between h-full">
             {/* Logo/Name */}
-            <Link 
-              href="/" 
+            <Link
+              href="/"
               className="text-xl font-semibold tracking-tight hover:opacity-70 transition-opacity"
             >
-              {siteData.profile.name}
+              {data.name}
             </Link>
 
             {/* Theme Toggle and Navigation */}
             <div className="flex items-center gap-8">
               <ThemeToggle />
-              
+
               {/* Navigation */}
               <nav className="hidden md:flex items-center gap-8 h-full">
-                {siteData.navigation.map((link) => (
+                {data.navigation.map((link) => (
                   <Link
                     key={link.href}
                     href={link.href}
@@ -36,9 +36,7 @@ const Header = () => {
               </nav>
 
               {/* Mobile Menu Button - placeholder for future implementation */}
-              <button className="md:hidden text-base font-bold">
-                Menu
-              </button>
+              <button className="md:hidden text-base font-bold">Menu</button>
             </div>
           </div>
         </div>
