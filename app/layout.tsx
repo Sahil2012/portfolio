@@ -3,6 +3,7 @@ import { Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import { ThemeProvider } from "@/components/providers";
+import { data } from "@/lib/data";
 
 const inter = Plus_Jakarta_Sans({
   variable: "--font-plus-jakarta-sans",
@@ -11,7 +12,13 @@ const inter = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Sahil Gupta - Full Stack Developer",
+  title:
+    process.env.NEXT_PUBLIC_PROFILE === "HIMANSHU"
+      ? "Himanshu Jaroli - Software Engineer"
+      : "Sahil Gupta - Full Stack Developer",
+  icons: {
+    icon: data.home.image, // needs new circular image
+  },
   description:
     "Full-stack developer crafting elegant solutions with modern technologies.",
 };
@@ -31,12 +38,12 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           {/* <SmoothScrolling> */}
-            <div className="min-h-screen h-screen bg-background font-sans transition-colors">
-              <Header />
-              <main className="relative top-16 h-[calc(100%-4rem)] w-full tracking-normal">
-                {children}
-              </main>
-            </div>
+          <div className="min-h-screen h-screen bg-background font-sans transition-colors">
+            <Header />
+            <main className="relative top-16 h-[calc(100%-4rem)] w-full tracking-normal">
+              {children}
+            </main>
+          </div>
           {/* </SmoothScrolling> */}
         </ThemeProvider>
       </body>
