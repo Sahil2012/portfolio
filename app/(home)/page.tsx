@@ -11,14 +11,14 @@ export default function Home() {
   return (
     <section className="relative h-full flex items-stretch">
       <div className="container mx-auto w-full px-8 h-full">
-        <div className="grid grid-cols-1 lg:grid-cols-[2fr_1fr] gap-12 lg:gap-20 items-center h-full">
+        <div className="grid grid-cols-1 lg:grid-cols-[2fr_1fr] gap-12 lg:gap-20 items-start lg:items-center h-full">
           {/* Left Content - Positioned slightly above center */}
-          <div className="flex flex-col gap-8 justify-center">
+          <div className="flex flex-col gap-4 md:gap-8 justify-center pt-12 lg:pt-0">
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4, ease: "easeOut" }}
-              className="text-3xl md:text-5xl lg:text-6xl font-bold text-foreground leading-[1.2] whitespace-pre-line"
+              className="text-[2rem] md:text-5xl lg:text-6xl font-bold text-foreground leading-[1.2] whitespace-pre-line"
             >
               {data.home.title}
             </motion.h1>
@@ -27,7 +27,7 @@ export default function Home() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4, delay: 0.1, ease: "easeOut" }}
-              className="text-lg md:text-xl max-w-lg text-muted-foreground font-medium tracking-wide"
+              className="text-base md:text-lg lg:text-xl max-w-lg text-muted-foreground font-medium tracking-wide"
             >
               {data.home.subline}
             </motion.div>
@@ -75,7 +75,7 @@ export default function Home() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.4, delay: 0.3, ease: "easeOut" }}
-            className="absolute flex bottom-0 right-0 justify-center lg:justify-end items-end h-full w-1/2"
+            className="absolute flex bottom-0 right-0 justify-center lg:justify-end items-end h-full w-full lg:w-1/2"
           >
             <div className="relative w-full h-full">
               <Image

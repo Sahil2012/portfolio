@@ -38,7 +38,7 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           {/* <SmoothScrolling> */}
-          <div className="min-h-screen h-screen bg-background font-sans transition-colors">
+          <div className="min-h-dvh h-dvh md:min-h-screen md:h-screen bg-background font-sans transition-colors">
             <Header />
             <main className="relative top-16 h-[calc(100%-4rem)] w-full tracking-normal">
               {children}
