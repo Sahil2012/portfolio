@@ -15,11 +15,10 @@ import { Button } from "@/components/ui/button";
 import { motion } from "motion/react";
 
 export default function CreationsPage() {
-  const [selectedCreation, setSelectedCreation] =
-    useState<(typeof data.creations.items)[number]>(
-      data.creations.items[0]
-    );
-  
+  const [selectedCreation, setSelectedCreation] = useState<
+    (typeof data.creations.items)[number]
+  >(data.creations.items[0]);
+
   const imageContainerRef = useRef<HTMLAnchorElement>(null);
   const [imageHeight, setImageHeight] = useState<number>(0);
 
@@ -27,7 +26,7 @@ export default function CreationsPage() {
     const calculateHeight = () => {
       if (imageContainerRef.current) {
         const rect = imageContainerRef.current.getBoundingClientRect();
-        const distanceToBottom = (window.innerHeight - rect.top);
+        const distanceToBottom = window.innerHeight - rect.top;
         setImageHeight(distanceToBottom);
       }
     };
@@ -52,7 +51,7 @@ export default function CreationsPage() {
           type="single"
           collapsible
           defaultValue={data.creations.items[0].id}
-          className="space-y-3"
+          className=""
         >
           {data.creations.items.map((creation: any, index: number) => (
             <motion.div
@@ -60,15 +59,20 @@ export default function CreationsPage() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.3, delay: 0.3 + index * 0.1, ease: "easeInOut" }}
+              className="border-b last:border-b-0 border-border"
+              transition={{
+                duration: 0.3,
+                delay: 0.3 + index * 0.1,
+                ease: "easeInOut",
+              }}
             >
               <AccordionItem value={creation.id}>
                 <AccordionTrigger onClick={() => setSelectedCreation(creation)}>
                   {creation.title}
                 </AccordionTrigger>
                 <AccordionContent>
-                  <div className="space-y-3">
-                    <p className="text-background/80">
+                  <div className="">
+                    <p className="text-muted-foreground">
                       {creation.description}
                     </p>
                   </div>
@@ -89,7 +93,7 @@ export default function CreationsPage() {
           viewport={{ once: true }}
           transition={{ duration: 0.3, delay: 0.3, ease: "easeOut" }}
           className="group relative block w-full rounded-t-3xl overflow-hidden border border-b-0 border-border"
-          style={{ height: imageHeight > 0 ? `${imageHeight}px` : 'auto' }}
+          style={{ height: imageHeight > 0 ? `${imageHeight}px` : "auto" }}
         >
           {/* Image */}
           {/* <Image
