@@ -16,7 +16,7 @@ export default function ContactPage() {
       subline2={page.subline2}
     >
       <div className="pb-24 relative">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 md:gap-18 lg:gap-24 items-start">
           {/* Left: Primary CTA */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -32,7 +32,7 @@ export default function ContactPage() {
               className="group inline-flex flex-col gap-2 text-2xl md:text-3xl font-semibold text-foreground hover:text-foreground/70 transition-all duration-300 w-fit"
             >
               <span className="inline-flex items-center gap-3">
-                <Calendar className="w-8 h-8" />
+                <Calendar className="w-6 h-6 md:w-8 md:h-8" />
                 Book a call
               </span>
               <span className="h-0.5 bg-foreground w-0 group-hover:w-full transition-all duration-300 ease-out" />
@@ -53,7 +53,7 @@ export default function ContactPage() {
               </p>
               <div className="h-px bg-border w-16" />
             </div>
-            <div className="space-y-4">
+            <div className="space-y-1 sm:space-y-2 md:space-y-4">
               {page.channels.map((channel: any) => {
                 const href =
                   channel.id === "email"
@@ -68,7 +68,7 @@ export default function ContactPage() {
                     href={href}
                     target={isExternal ? "_blank" : undefined}
                     rel={isExternal ? "noopener noreferrer" : undefined}
-                    className="group flex items-center justify-between text-xl md:text-2xl font-medium text-foreground border-b border-border/50 py-5 hover:border-foreground/30 transition-all duration-300 relative tracking-wide"
+                    className="group flex items-center justify-between text-lg sm:text-xl md:text-2xl font-medium text-foreground border-b border-border/50 py-3 md:py-5 hover:border-foreground/30 transition-all duration-300 relative tracking-wide"
                   >
                     <span className="relative group-hover:translate-x-1 transition-transform duration-300">
                       {channel.label}

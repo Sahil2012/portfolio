@@ -12,14 +12,18 @@ export default function ChangelogPage() {
       subline1={data.changelog.page.subline1}
       subline2={data.changelog.page.subline2}
     >
-      <div className="space-y-12 md:space-y-16 pb-16">
+      <div className="space-y-8 sm:space-y-12 md:space-y-16 pb-16 pt-2 md:pt-0">
         {data.work.fullTime.map((experience: any, index: number) => (
           <motion.div
             key={experience.id}
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.3, delay: 0.3 + index * 0.1, ease: "easeOut" }}
+            transition={{
+              duration: 0.3,
+              delay: 0.3 + index * 0.1,
+              ease: "easeOut",
+            }}
             className="flex gap-6 md:gap-8 group"
           >
             {/* Company Logo */}
@@ -44,11 +48,14 @@ export default function ChangelogPage() {
                 <p className="text-base md:text-lg text-muted-foreground font-semibold">
                   {experience.title}
                 </p>
+                <p className="md:hidden text-sm md:text-base text-muted-foreground/80">
+                  {experience.duration}
+                </p>
                 <p className="text-base md:text-lg text-foreground/80 leading-normal max-w-3xl pt-2.5">
                   {experience.description}
                 </p>
               </div>
-              <p className="text-sm md:text-base text-muted-foreground/80">
+              <p className="hidden md:block text-sm md:text-base text-muted-foreground/80">
                 {experience.duration}
               </p>
             </div>

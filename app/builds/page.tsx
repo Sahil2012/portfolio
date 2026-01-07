@@ -42,7 +42,7 @@ export default function CreationsPage() {
       subline1={data.creations.page.subline1}
       subline2={data.creations.page.subline2}
     >
-      <div className="grid grid-cols-1 lg:grid-cols-[24rem_1fr] gap-12 lg:gap-20">
+      <div className="grid grid-cols-1 lg:grid-cols-[24rem_1fr] gap-12 lg:gap-20 pb-8 sm:pb-0">
         {/* Left Side - Accordion */}
         <Accordion
           type="single"
@@ -79,7 +79,7 @@ export default function CreationsPage() {
           ))}
         </Accordion>
 
-        {/* Right Side - Image Only */}
+        {/* Right Side - Desktop View */}
         <motion.a
           ref={imageContainerRef}
           href={selectedCreation.href}
@@ -89,7 +89,7 @@ export default function CreationsPage() {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.3, delay: 0.3, ease: "easeOut" }}
-          className="group relative block w-full rounded-t-3xl overflow-hidden border border-b-0 border-border"
+          className="hidden sm:block group relative w-full rounded-t-3xl overflow-hidden border border-b-0 border-border"
           style={{ height: imageHeight > 0 ? `${imageHeight}px` : "auto" }}
         >
           {/* Image */}
@@ -115,6 +115,26 @@ export default function CreationsPage() {
               <ExternalLink className="w-4 h-4" />
             </Button>
           </div> */}
+        </motion.a>
+
+        {/* Right Side - Mobile View */}
+        <motion.a
+          href={selectedCreation.href}
+          target="_blank"
+          rel="noopener noreferrer"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.3, delay: 0.3, ease: "easeOut" }}
+          className="sm:hidden group w-full h-[80vh] rounded-3xl overflow-hidden border border-border"
+        >
+          <div className="w-full h-full pointer-events-one">
+            <iframe
+              src={selectedCreation.href}
+              title={selectedCreation.title}
+              className="w-full h-full"
+            />
+          </div>
         </motion.a>
       </div>
     </ContentLayout>

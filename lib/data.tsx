@@ -11,7 +11,7 @@ const himanshuData = {
   companyUrl: "https://www.rapidstart.net/",
   calLink: "https://cal.com/himanshu-jaroli-cjbeah/30min",
   navigation: [
-    { label: "Portfolio", href: "/portfolio" },
+    { label: "Builds", href: "/builds" },
     { label: "Client Projects", href: "/client-projects" },
     { label: "Changelog", href: "/changelog" },
     { label: "Contact", href: "/contact" },
@@ -94,7 +94,7 @@ const himanshuData = {
   },
   creations: {
     page: {
-      title: "Portfolio",
+      title: "Builds",
       subline1: "Tools that solve real problems.",
       subline2:
         "From automating job applications to crafting custom software solutions.",
@@ -299,7 +299,7 @@ const sahilData = {
   companyUrl: "https://www.hsbc.com/",
   calLink: "https://cal.com/sahil-gupta-7/15min?overlayCalendar=true",
   navigation: [
-    { label: "Portfolio", href: "/creations" },
+    { label: "Builds", href: "/builds" },
     { label: "Client Projects", href: "/work" },
     { label: "Writings", href: "/writings" },
     { label: "Contact", href: "/contact" },
@@ -374,7 +374,7 @@ const sahilData = {
   },
   creations: {
     page: {
-      title: "Portfolio",
+      title: "Builds",
       subline1: "Tools that solve real problems.",
       subline2:
         "From automating job applications to crafting custom software solutions.",

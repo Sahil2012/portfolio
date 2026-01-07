@@ -17,7 +17,7 @@ const Headline = ({ title, subline1, subline2 }: HeadlineProps) => {
         animate={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.3, ease: "easeInOut" }}
-        className="text-3xl md:text-5xl font-bold tracking-wide text-foreground leading-[1.1] whitespace-pre-line mb-6"
+        className="text-[2rem] sm:text-4xl md:text-5xl font-bold tracking-wide text-foreground leading-[1.1] whitespace-pre-line mb-4 lg:mb-6"
       >
         {title}
       </motion.h2>
@@ -28,7 +28,7 @@ const Headline = ({ title, subline1, subline2 }: HeadlineProps) => {
         transition={{ delay: 0.1, duration: 0.3, ease: "easeInOut" }}
         className="text-lg md:text-xl text-muted-foreground font-medium tracking-wide leading-snug"
       >
-        {subline1} <br className="hidden md:block" />
+        {subline1} <br />
         <span className="text-foreground">{subline2}</span>
       </motion.p>
     </div>

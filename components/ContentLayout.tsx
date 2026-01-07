@@ -18,11 +18,11 @@ const ContentLayout = ({
   contentInContaienr = true,
 }: ContentLayoutProps) => {
   return (
-    <div className="pt-12">
-      <div className="container px-8 mx-auto">
+    <div className="flex flex-col h-full pt-8 lg:pt-12">
+      <div className="container px-7 lg:px-8 mx-auto">
         <Headline title={title} subline1={subline1} subline2={subline2} />
       </div>
-      <div className={cn(contentInContaienr ? "container px-8 mx-auto" : "")}>
+      <div className={cn(contentInContaienr ? "h-full container px-7 lg:px-8 mx-auto" : "grow")}>
         {children}
       </div>
     </div>
