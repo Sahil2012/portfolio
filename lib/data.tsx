@@ -15,7 +15,7 @@ const commonData = {
         title: "Naukri Outreach",
         description:
           "A SaaS tool that simplifies the referral process by automating outreach workflows and generating context-aware referral and follow-up messages tailored to the company, role, and job description using AI.",
-        href: "https://Naukri-outreach.vercel.app/",
+        href: "https://outreach-landing.vercel.app/",
         actionText: "See the Tool",
         gradient: "from-emerald-500/10 via-teal-500/10 to-blue-500/10",
         image: "/naukri-outreach.png",
