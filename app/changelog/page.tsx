@@ -8,12 +8,12 @@ import { motion } from "motion/react";
 export default function ChangelogPage() {
   return (
     <ContentLayout
-      title={data.changelog.page.title}
-      subline1={data.changelog.page.subline1}
-      subline2={data.changelog.page.subline2}
+      title={data.changelog.title}
+      subline1={data.changelog.subline1}
+      subline2={data.changelog.subline2}
     >
       <div className="space-y-8 sm:space-y-12 md:space-y-16 pb-16 pt-2 md:pt-0">
-        {data.work.fullTime.map((experience: any, index: number) => (
+        {data.changelog.items.map((experience: any, index: number) => (
           <motion.div
             key={experience.id}
             initial={{ opacity: 0, y: 20 }}
@@ -32,8 +32,16 @@ export default function ChangelogPage() {
                 <Image
                   src={experience.logo}
                   alt={`${experience.company} logo`}
-                  width={experience.id === "hsbc" || experience.id === "capgemini" ? 128 : 64}
-                  height={experience.id === "hsbc" || experience.id === "capgemini" ? 128 : 64}
+                  width={
+                    experience.id === "hsbc" || experience.id === "capgemini"
+                      ? 128
+                      : 64
+                  }
+                  height={
+                    experience.id === "hsbc" || experience.id === "capgemini"
+                      ? 128
+                      : 64
+                  }
                   className="w-full h-full object-contain p-2"
                 />
               </div>

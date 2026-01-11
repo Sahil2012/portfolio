@@ -1,13 +1,13 @@
 "use client";
 
 import { Card, CarouselContext } from "@/components/ui/apple-cards-carousel";
-import { data } from "@/lib/data";
 import { cn } from "@/lib/utils";
 import { IconArrowNarrowRight } from "@tabler/icons-react";
 import Image from "next/image";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { useContext } from "react";
+import Link from "next/link";
 
 const ClientProjectCard = ({
   project,
@@ -23,7 +23,7 @@ const ClientProjectCard = ({
       key={project.id}
       index={index}
       card={{
-        src: project.image || data.work.ui.fallbackImage,
+        src: project.image,
         title: project.name,
         category: project.category,
         content: (
@@ -49,12 +49,12 @@ const ClientProjectCard = ({
             {/* Content Container */}
             <div className="text-left mt-18 sm:mt-24 md:mt-28 flex flex-col gap-4 w-3xs sm:w-2xs md:w-md">
               {/* Description */}
-              <p className="text-sm md:text-base leading-relaxed text-white/90 font-sans">
+              <p className="text-sm md:text-lg font-semibold leading-relaxed text-white">
                 {project.description}
               </p>
 
               {/* Technologies */}
-              <div>
+              {/* <div>
                 <div className="flex flex-wrap gap-2">
                   {project.technologies.map((tech: any) => (
                     <Badge
@@ -66,15 +66,21 @@ const ClientProjectCard = ({
                     </Badge>
                   ))}
                 </div>
-              </div>
+              </div> */}
             </div>
 
             <div className="flex flex-col gap-4 md:gap-6">
               {/* Link Button */}
               <div className="flex justify-start">
-                <Button className="cursor-pointer" variant="secondary">
-                  Open Link <IconArrowNarrowRight />
-                </Button>
+                <Link
+                  href={project.website}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Button className="cursor-pointer" variant="secondary">
+                    Open Link <IconArrowNarrowRight />
+                  </Button>
+                </Link>
               </div>
             </div>
           </div>

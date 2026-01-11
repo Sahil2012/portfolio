@@ -13,8 +13,8 @@ import { useLayoutEffect, useRef, useState } from "react";
 
 export default function CreationsPage() {
   const [selectedCreation, setSelectedCreation] = useState<
-    (typeof data.creations.items)[number]
-  >(data.creations.items[0]);
+    (typeof data.builds.items)[number]
+  >(data.builds.items[0]);
 
   const imageContainerRef = useRef<HTMLAnchorElement>(null);
   const [imageHeight, setImageHeight] = useState<number>(0);
@@ -38,19 +38,19 @@ export default function CreationsPage() {
 
   return (
     <ContentLayout
-      title={data.creations.page.title}
-      subline1={data.creations.page.subline1}
-      subline2={data.creations.page.subline2}
+      title={data.builds.title}
+      subline1={data.builds.subline1}
+      subline2={data.builds.subline2}
     >
       <div className="grid grid-cols-1 lg:grid-cols-[24rem_1fr] gap-12 lg:gap-20 pb-8 sm:pb-0">
         {/* Left Side - Accordion */}
         <Accordion
           type="single"
           collapsible
-          defaultValue={data.creations.items[0].id}
+          defaultValue={data.builds.items[0].id}
           className=""
         >
-          {data.creations.items.map((creation: any, index: number) => (
+          {data.builds.items.map((creation: any, index: number) => (
             <motion.div
               key={creation.id}
               initial={{ opacity: 0, y: 20 }}

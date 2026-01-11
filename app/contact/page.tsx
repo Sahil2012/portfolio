@@ -7,13 +7,11 @@ import Link from "next/link";
 import { motion } from "motion/react";
 
 export default function ContactPage() {
-  const { page } = data.contact;
-
   return (
     <ContentLayout
-      title={page.title}
-      subline1={page.subline1}
-      subline2={page.subline2}
+      title={data.contact.title}
+      subline1={data.contact.subline1}
+      subline2={data.contact.subline2}
     >
       <div className="pb-24 relative">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 md:gap-18 lg:gap-24 items-start">
@@ -49,12 +47,12 @@ export default function ContactPage() {
           >
             <div className="space-y-2">
               <p className="text-sm uppercase tracking-wider text-muted-foreground font-medium">
-                {page.secondaryHeading}
+                {data.contact.secondaryHeading}
               </p>
               <div className="h-px bg-border w-16" />
             </div>
             <div className="space-y-1 sm:space-y-2 md:space-y-4">
-              {page.channels.map((channel: any) => {
+              {data.contact.items.map((channel: any) => {
                 const href =
                   channel.id === "email"
                     ? `mailto:${data.contact.email}`

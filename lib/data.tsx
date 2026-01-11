@@ -1,8 +1,169 @@
 import Link from "next/link";
 import { Highlight } from "@/components/ui/hero-highlight";
-import { label } from "motion/react-client";
 
 const profile = process.env.NEXT_PUBLIC_PROFILE;
+
+const commonData = {
+  builds: {
+    title: "Builds",
+    subline1: "Tools that solve real problems.",
+    subline2:
+      "From automating job applications to crafting custom software solutions.",
+    items: [
+      {
+        id: "naukri",
+        title: "Naukri Outreach",
+        description:
+          "A SaaS tool that simplifies the referral process by automating outreach workflows and generating context-aware referral and follow-up messages tailored to the company, role, and job description using AI.",
+        href: "https://Naukri-outreach.vercel.app/",
+        actionText: "See the Tool",
+        gradient: "from-emerald-500/10 via-teal-500/10 to-blue-500/10",
+        image: "/naukri-outreach.png",
+      },
+      {
+        id: "novacrafts",
+        title: "NovaCraftsAI",
+        description:
+          "A software studio focused on turning ideas into real systems — spanning web and mobile applications, AI agents and workflow automation.",
+        href: "https://novacraftsai.com/",
+        actionText: "Visit Studio",
+        gradient: "from-orange-500/10 via-amber-500/10 to-red-500/10",
+        image: "/nova-crafts-ai.png",
+      },
+    ],
+  },
+  clientProjects: {
+    title: "Client Projects.",
+    subline1: "Projects I've worked on.",
+    subline2:
+      "From automating job applications to crafting custom software solutions.",
+    items: [
+      {
+        id: "grief-navigator",
+        name: "Grief Navigator",
+        category: "Mobile App · Mental Health",
+        description:
+          "Built an end-to-end mobile application to support people through their grief journey, including journaling, guided activities, and secure sharing of progress and reports with licensed psychologists.",
+        technologies: [
+          "React Native",
+          "TypeScript",
+          "Expo",
+          "Azure",
+          "SpringBoot",
+        ],
+        year: "2024",
+        featured: false,
+        image: "/backgrounds/grief-navigator.png",
+        logo: "/logos/grief-navigator.png",
+        website: "https://play.google.com/",
+      },
+      {
+        id: "afm",
+        name: "Asia Forex Mentor",
+        category: "AI Automation & Workflows",
+        description:
+          "Built AI-powered automation workflows to support lead generation, outreach, SEO-driven content updates, and customer support using n8n and LLMs.",
+        technologies: ["n8n", "OpenAI", "Python", "Render"],
+        year: "2024",
+        featured: true,
+        image: "/backgrounds/afm.png",
+        logo: "/logos/afm.png",
+        website: "https://asiaforexmentor.com/",
+      },
+      {
+        id: "valerie-ai",
+        name: "Valerie.ai",
+        category: "AI Voice Assistant · Business Automation",
+        description:
+          "Built features for a 24/7 AI voice assistant that answers, qualifies, books, and follows up on inbound calls, helping businesses capture leads and schedule bookings without missed opportunities.",
+        technologies: [
+          "AI Voice",
+          "CRM Integrations",
+          "Calendar Sync",
+          "Natural Language Processing",
+        ],
+        year: "2023",
+        featured: true,
+        image: "/backgrounds/valerie-ai.png",
+        logo: "/logos/valerie.svg",
+        website: "https://valerie.ai/",
+      },
+      {
+        id: "yash-bikes",
+        name: "Yash Bikes",
+        category: "E-commerce",
+        description:
+          "Built a custom commerce platform for a premium bike rental company, enabling online sales, inventory management, and service bookings through a single, streamlined system.",
+        technologies: ["Next.js", "Stripe", "Prisma", "PostgreSQL"],
+        year: "2024",
+        featured: true,
+        image: "/backgrounds/yash-bikes.png",
+        logo: "/logos/yash-bikes.png",
+        website: "https://yashbikes.vercel.app/",
+      },
+      {
+        id: "remember-publisher",
+        name: "Remember Publisher",
+        category: "AI-Assisted Writing Platform",
+        description:
+          "Built a writing platform that helps people turn raw thoughts into structured books by using AI to refine, organize, and enhance personal writing.",
+        technologies: [
+          "React.js",
+          "TypeScript",
+          "OpenAI",
+          "Express",
+          "Langgraph",
+          "PostgreSQL",
+        ],
+        year: "2025",
+        featured: false,
+        image: "/backgrounds/remember-publisher.png",
+        logo: "/logos/remember-press.png",
+        website: "https://rememberpublisher.com",
+      },
+      {
+        id: "disability-dynamics",
+        name: "Disability Dynamics",
+        category: "Web Platform · Accessibility",
+        description:
+          "Designed and developed an accessibility-first platform providing structured resources and support tools for individuals with disabilities, with a focus on clarity, compliance, and real-world usability.",
+        technologies: ["Next.js", "TypeScript", "Prisma"],
+        year: "2024",
+        featured: false,
+        image: "/backgrounds/disability-dynamics.png",
+        logo: "/logos/disability-dynamics.png",
+        website: "https://www.disabilitydynamics.com.au/",
+      },
+    ],
+  },
+  contact: {
+    title: "Contact.",
+    subline1: "Want to hire me? Let's connect.",
+    subline2: "Available for freelance projects and full-time opportunities.",
+    primaryCTA: {
+      text: "Book a Call",
+    },
+    secondaryHeading: "Or connect via other channels:",
+    items: [
+      {
+        id: "email",
+        label: "Email",
+      },
+      {
+        id: "twitter",
+        label: "Twitter / X",
+      },
+      {
+        id: "linkedin",
+        label: "LinkedIn",
+      },
+      {
+        id: "github",
+        label: "GitHub",
+      },
+    ],
+  },
+};
 
 const himanshuData = {
   name: "Himanshu J.",
@@ -12,47 +173,20 @@ const himanshuData = {
   companyUrl: "https://www.rapidstart.net/",
   calLink: "https://cal.com/himanshu-jaroli-cjbeah/30min",
   resume: "/himanshu-resume.pdf",
+  email: "jaroli.himanshu.work@gmail.com",
+  image: "/himanshu.png",
+  logo: "/himanshu-square.png",
+  social: {
+    github: "https://github.com/HJ1X/",
+    twitter: "https://x.com/himanshu_jaroli/",
+    linkedin: "https://www.linkedin.com/in/himanshu-jaroli/",
+  },
   navigation: [
     { label: "Builds", href: "/builds" },
     { label: "Client Projects", href: "/client-projects" },
     { label: "Changelog", href: "/changelog" },
     { label: "Contact", href: "/contact" },
   ],
-  contact: {
-    email: "jaroli.himanshu.work@gmail.com",
-    page: {
-      title: "Contact.",
-      subline1: "Want to hire me? Let's connect.",
-      subline2: "Available for freelance projects and full-time opportunities.",
-      primaryCTA: {
-        text: "Book a Call",
-      },
-      secondaryHeading: "Or connect via other channels:",
-      channels: [
-        {
-          id: "email",
-          label: "Email",
-        },
-        {
-          id: "twitter",
-          label: "Twitter / X",
-        },
-        {
-          id: "linkedin",
-          label: "LinkedIn",
-        },
-        {
-          id: "github",
-          label: "GitHub",
-        },
-      ],
-    },
-  },
-  social: {
-    github: "https://github.com/HJ1X/",
-    twitter: "https://x.com/himanshu_jaroli/",
-    linkedin: "https://www.linkedin.com/in/himanshu-jaroli/",
-  },
   home: {
     title: (
       <span>
@@ -94,61 +228,17 @@ const himanshuData = {
       text: "Let's connect",
     },
   },
-  creations: {
-    page: {
-      title: "Builds",
-      subline1: "Tools that solve real problems.",
-      subline2:
-        "From automating job applications to crafting custom software solutions.",
-    },
-    items: [
-      {
-        id: "naukri",
-        title: "Naukri Outreach",
-        description:
-          "A SaaS tool that simplifies the referral process by automating outreach workflows and generating context-aware referral and follow-up messages tailored to the company, role, and job description using AI.",
-        href: "https://Naukri-outreach.vercel.app/",
-        actionText: "See the Tool",
-        gradient: "from-emerald-500/10 via-teal-500/10 to-blue-500/10",
-        image: "/naukri-outreach.png",
-      },
-      {
-        id: "novacrafts",
-        title: "NovaCraftsAI",
-        description:
-          "A software studio focused on turning ideas into real systems — spanning web and mobile applications, AI agents and workflow automation.",
-        href: "https://novacraftsai.com/",
-        actionText: "Visit Studio",
-        gradient: "from-orange-500/10 via-amber-500/10 to-red-500/10",
-        image: "/nova-crafts-ai.png",
-      },
-    ],
-  },
   writings: {
     title: null,
     subline1: null,
     subline2: null,
-    articles: null,
+    items: null,
   },
   changelog: {
-    page: {
-      title: "Changelog.",
-      subline1: "My professional journey.",
-      subline2: "Full-time roles and career milestones.",
-    },
-  },
-  work: {
-    page: {
-      title: "Client Projects.",
-      subline1: "Projects I've worked on.",
-      subline2:
-        "From automating job applications to crafting custom software solutions.",
-    },
-    ui: {
-      openLink: "Open Link",
-      fallbackImage: "/himanshu.png",
-    },
-    fullTime: [
+    title: "Changelog.",
+    subline1: "My professional journey.",
+    subline2: "Full-time roles and career milestones.",
+    items: [
       {
         id: "rapidstart",
         title: "Senior Full Stack Developer",
@@ -210,86 +300,6 @@ const himanshuData = {
         ],
       },
     ],
-    clientProjects: [
-      {
-        id: "yash-bikes",
-        name: "Yash Bikes",
-        category: "E-commerce",
-        description:
-          "Custom e-commerce platform for premium bicycle retailer with inventory management and online booking system.",
-        technologies: ["Next.js", "Stripe", "Prisma", "PostgreSQL"],
-        year: "2024",
-        featured: true,
-        image:
-          "https://images.unsplash.com/photo-1507035895480-2b3156c31fc8?q=80&w=2070&auto=format&fit=crop",
-        logo: "/logos/yash-bikes.svg",
-      },
-      {
-        id: "afm",
-        name: "Asia Forex Mentor",
-        category: "Education Platform",
-        description:
-          "Comprehensive forex trading education platform with course management, student dashboard, and payment integration.",
-        technologies: ["React", "Node.js", "MongoDB", "AWS"],
-        year: "2023",
-        featured: true,
-        image:
-          "https://images.unsplash.com/photo-1611974765270-ca12586343bb?q=80&w=2070&auto=format&fit=crop",
-        logo: "/logos/afm.png",
-      },
-      {
-        id: "grief-navigator",
-        name: "Grief Navigator",
-        category: "Mental Health",
-        description:
-          "Compassionate platform connecting individuals with grief counselors and support resources.",
-        technologies: ["Next.js", "TypeScript", "Supabase", "Tailwind"],
-        year: "2024",
-        featured: false,
-        image:
-          "https://images.unsplash.com/photo-1544027993-37dbfe43562a?q=80&w=2070&auto=format&fit=crop",
-        logo: "/logos/grief-navigator.png",
-      },
-      {
-        id: "valerie-ai",
-        name: "Valerie.ai",
-        category: "AI/ML",
-        description:
-          "AI-powered virtual assistant for healthcare professionals with natural language processing capabilities.",
-        technologies: ["Python", "React", "OpenAI", "FastAPI"],
-        year: "2023",
-        featured: true,
-        image:
-          "https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=2070&auto=format&fit=crop",
-        logo: "/logos/valerie.svg",
-      },
-      {
-        id: "disability-dynamics",
-        name: "Disability Dynamics",
-        category: "Accessibility",
-        description:
-          "Accessibility-first platform providing resources and tools for individuals with disabilities.",
-        technologies: ["Next.js", "TypeScript", "Prisma", "WCAG 2.1"],
-        year: "2024",
-        featured: false,
-        image:
-          "https://images.unsplash.com/photo-1573497620053-ea5300f94f21?q=80&w=2070&auto=format&fit=crop",
-        logo: "/logos/disability-dynamics.png",
-      },
-      {
-        id: "remember-publisher",
-        name: "Remember Publisher",
-        category: "Content Management",
-        description:
-          "Modern CMS for memorial and obituary publishing with multi-site support and custom templates.",
-        technologies: ["Next.js", "Sanity.io", "Vercel", "TypeScript"],
-        year: "2023",
-        featured: false,
-        image:
-          "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?q=80&w=2070&auto=format&fit=crop",
-        logo: "/logos/remember-press.png",
-      },
-    ],
   },
 } as const;
 
@@ -301,6 +311,7 @@ const sahilData = {
   companyUrl: "https://www.hsbc.com/",
   calLink: "https://cal.com/sahil-gupta-7/15min?overlayCalendar=true",
   resume: "/sahil-resume.pdf",
+  image: "/sahil-1.png",
   navigation: [
     { label: "Builds", href: "/builds" },
     { label: "Projects", href: "/client-projects" },
@@ -308,36 +319,6 @@ const sahilData = {
     { label: "Writings", href: "/writings" },
     { label: "Contact", href: "/contact" },
   ],
-  contact: {
-    email: "sahilhsgupta7@gmail.com",
-    page: {
-      title: "Contact.",
-      subline1: "Want to hire me? Let's connect.",
-      subline2: "Available for freelance projects and full-time opportunities.",
-      primaryCTA: {
-        text: "Book a Call",
-      },
-      secondaryHeading: "Or connect via other channels:",
-      channels: [
-        {
-          id: "email",
-          label: "Email",
-        },
-        {
-          id: "twitter",
-          label: "Twitter / X",
-        },
-        {
-          id: "linkedin",
-          label: "LinkedIn",
-        },
-        {
-          id: "github",
-          label: "GitHub",
-        },
-      ],
-    },
-  },
   social: {
     github: "https://github.com/Sahil2012/",
     twitter: "https://x.com/guptasahil7/",
@@ -371,60 +352,15 @@ const sahilData = {
         .
       </span>
     ),
-    image: "/sahil-1.png",
     cta: {
       text: "Let's connect",
     },
   },
-  creations: {
-    page: {
-      title: "Builds",
-      subline1: "Tools that solve real problems.",
-      subline2:
-        "From automating job applications to crafting custom software solutions.",
-    },
-    items: [
-      {
-        id: "naukri",
-        title: "Naukri Outreach",
-        description:
-          "A SaaS tool that simplifies the referral process by automating outreach workflows and generating context-aware referral and follow-up messages tailored to the company, role, and job description using AI.",
-        href: "https://Naukri-outreach.vercel.app/",
-        actionText: "See the Tool",
-        gradient: "from-emerald-500/10 via-teal-500/10 to-blue-500/10",
-        image: "/naukri-outreach.png",
-      },
-      {
-        id: "novacrafts",
-        title: "NovaCraftsAI",
-        description:
-          "A software studio focused on turning ideas into real systems — spanning web and mobile applications, AI agents and workflow automation.",
-        href: "https://novacraftsai.com/",
-        actionText: "Visit Studio",
-        gradient: "from-orange-500/10 via-amber-500/10 to-red-500/10",
-        image: "/nova-crafts-ai.png",
-      },
-    ],
-  },
   changelog: {
-    page: {
-      title: "Changelog.",
-      subline1: "My professional journey.",
-      subline2: "Full-time roles and career milestones.",
-    },
-  },
-  work: {
-    page: {
-      title: "Client Projects.",
-      subline1: "Projects I've worked on.",
-      subline2:
-        "From automating job applications to crafting custom software solutions.",
-    },
-    ui: {
-      openLink: "Open Link",
-      fallbackImage: "/sahil-1.png",
-    },
-    fullTime: [
+    title: "Changelog.",
+    subline1: "My professional journey.",
+    subline2: "Full-time roles and career milestones.",
+    items: [
       {
         id: "hsbc",
         title: "Senior Software Engineer",
@@ -487,86 +423,6 @@ const sahilData = {
           "Built a course management dashboard, improving enrollment visibility and reducing support queries",
           "Improved platform engagement by ~25% through UI and UX enhancements",
         ],
-      }
-    ],
-    clientProjects: [
-      {
-        id: "yash-bikes",
-        name: "Yash Bikes",
-        category: "E-commerce",
-        description:
-          "Custom e-commerce platform for premium bicycle retailer with inventory management and online booking system.",
-        technologies: ["Next.js", "Stripe", "Prisma", "PostgreSQL"],
-        year: "2024",
-        featured: true,
-        image:
-          "https://images.unsplash.com/photo-1507035895480-2b3156c31fc8?q=80&w=2070&auto=format&fit=crop",
-        logo: "/logos/yash-bikes.svg",
-      },
-      {
-        id: "afm",
-        name: "Asia Forex Mentor",
-        category: "Education Platform",
-        description:
-          "Comprehensive forex trading education platform with course management, student dashboard, and payment integration.",
-        technologies: ["React", "Node.js", "MongoDB", "AWS"],
-        year: "2023",
-        featured: true,
-        image:
-          "https://images.unsplash.com/photo-1611974765270-ca12586343bb?q=80&w=2070&auto=format&fit=crop",
-        logo: "/logos/afm.svg",
-      },
-      {
-        id: "grief-navigator",
-        name: "Grief Navigator",
-        category: "Mental Health",
-        description:
-          "Compassionate platform connecting individuals with grief counselors and support resources.",
-        technologies: ["Next.js", "TypeScript", "Supabase", "Tailwind"],
-        year: "2024",
-        featured: false,
-        image:
-          "https://images.unsplash.com/photo-1544027993-37dbfe43562a?q=80&w=2070&auto=format&fit=crop",
-        logo: "/logos/grief-navigator.svg",
-      },
-      {
-        id: "valerie-ai",
-        name: "Valerie.ai",
-        category: "AI/ML",
-        description:
-          "AI-powered virtual assistant for healthcare professionals with natural language processing capabilities.",
-        technologies: ["Python", "React", "OpenAI", "FastAPI"],
-        year: "2023",
-        featured: true,
-        image:
-          "https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=2070&auto=format&fit=crop",
-        logo: "/logos/valerie-ai.svg",
-      },
-      {
-        id: "disability-dynamics",
-        name: "Disability Dynamics",
-        category: "Accessibility",
-        description:
-          "Accessibility-first platform providing resources and tools for individuals with disabilities.",
-        technologies: ["Next.js", "TypeScript", "Prisma", "WCAG 2.1"],
-        year: "2024",
-        featured: false,
-        image:
-          "https://images.unsplash.com/photo-1573497620053-ea5300f94f21?q=80&w=2070&auto=format&fit=crop",
-        logo: "/logos/disability-dynamics.svg",
-      },
-      {
-        id: "remember-publisher",
-        name: "Remember Publisher",
-        category: "Content Management",
-        description:
-          "Modern CMS for memorial and obituary publishing with multi-site support and custom templates.",
-        technologies: ["Next.js", "Sanity.io", "Vercel", "TypeScript"],
-        year: "2023",
-        featured: false,
-        image:
-          "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?q=80&w=2070&auto=format&fit=crop",
-        logo: "/logos/remember-publisher.svg",
       },
     ],
   },
@@ -633,8 +489,8 @@ const sahilData = {
 
 export let data: any;
 if (profile === "HIMANSHU") {
-  data = himanshuData;
+  data = { ...commonData, ...himanshuData };
 } else {
-  data = sahilData;
+  data = { ...commonData, ...sahilData };
 }
-export type SiteData = typeof sahilData;
+export type SiteData = typeof data;

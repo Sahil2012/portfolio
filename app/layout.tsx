@@ -17,7 +17,7 @@ export const metadata: Metadata = {
       ? "Himanshu Jaroli - Software Engineer"
       : "Sahil Gupta - Full Stack Developer",
   icons: {
-    icon: data.home.image, // needs new circular image
+    icon: data.logo, // needs new circular image
   },
   description:
     "Full-stack developer crafting elegant solutions with modern technologies.",

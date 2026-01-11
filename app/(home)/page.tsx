@@ -79,7 +79,7 @@ export default function Home() {
           >
             <div className="relative w-full h-full">
               <Image
-                src={data.home.image}
+                src={data.image}
                 alt={data.fullName}
                 fill
                 style={{
