@@ -310,8 +310,9 @@ const sahilData = {
   currentCompany: "HSBC",
   companyUrl: "https://www.hsbc.com/",
   calLink: "https://cal.com/sahil-gupta-7/15min?overlayCalendar=true",
-  resume: "/sahil-resume.pdf",
-  image: "/sahil-1.png",
+  resume: "https://drive.google.com/file/d/1oVp1wjGylHoye7SxgcwJee4LXr7s_hDu/view?usp=drive_link",
+  image: "/sahil.png",
+  logo: "/sahil-fav.png",
   navigation: [
     { label: "Builds", href: "/builds" },
     { label: "Projects", href: "/client-projects" },
