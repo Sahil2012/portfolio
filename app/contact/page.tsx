@@ -55,7 +55,7 @@ export default function ContactPage() {
               {data.contact.items.map((channel: any) => {
                 const href =
                   channel.id === "email"
-                    ? `mailto:${data.contact.email}`
+                    ? `mailto:${data.email}`
                     : data.social[channel.id as keyof typeof data.social];
                 const isExternal = channel.id !== "email";
                 const Icon = channel.id === "email" ? Mail : ArrowUpRight;

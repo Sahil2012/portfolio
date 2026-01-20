@@ -4,7 +4,6 @@ import { Card, CarouselContext } from "@/components/ui/apple-cards-carousel";
 import { cn } from "@/lib/utils";
 import { IconArrowNarrowRight } from "@tabler/icons-react";
 import Image from "next/image";
-import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { useContext } from "react";
 import Link from "next/link";
@@ -30,7 +29,7 @@ const ClientProjectCard = ({
           <div
             className={cn(
               "absolute h-full w-full inset-0 z-40 grow flex flex-col justify-between p-5 sm:p-6 md:p-8 opacity-0 translate-y-3 group-hover:opacity-100 group-hover:translate-y-0 transition-all ease-in-out pointer-events-none group-hover:pointer-events-auto",
-              currentIndex === index && "opacity-100 translate-y-0"
+              currentIndex === index && "opacity-100 translate-y-0 pointer-events-auto"
             )}
           >
             {/* Logo */}
@@ -52,21 +51,6 @@ const ClientProjectCard = ({
               <p className="text-sm md:text-lg font-semibold leading-relaxed text-white">
                 {project.description}
               </p>
-
-              {/* Technologies */}
-              {/* <div>
-                <div className="flex flex-wrap gap-2">
-                  {project.technologies.map((tech: any) => (
-                    <Badge
-                      key={tech}
-                      className="border-white/30 bg-white/10 text-white/70 rounded-sm"
-                      variant="outline"
-                    >
-                      {tech}
-                    </Badge>
-                  ))}
-                </div>
-              </div> */}
             </div>
 
             <div className="flex flex-col gap-4 md:gap-6">

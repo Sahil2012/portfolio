@@ -210,7 +210,7 @@ export const BlurImage = ({
       <Image
         className={cn(
           "h-full w-full transition duration-300 group-hover:scale-105 origin-center will-change-[filter]",
-          isLoading || shouldBlur ? "blur-sm" : "blur-[2px] group-hover:blur-sm",
+          (isLoading || shouldBlur) ? "blur-sm scale-105" : "blur-[2px] group-hover:blur-sm",
           className
         )}
         onLoad={() => setLoading(false)}
