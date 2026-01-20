@@ -390,6 +390,7 @@ const sahilData = {
       {
         id: "hsbc",
         title: "Senior Software Engineer",
+        type: "experience",
         company: "HSBC",
         logo: "/logos/hsbc.png",
         logoSize: 128,
@@ -400,6 +401,7 @@ const sahilData = {
       {
         id: "tcs",
         title: "Software Engineer",
+        type: "experience",
         company: "Tata Consultancy Services",
         logo: "/logos/tcs.png",
         duration: "Jul 2022 - Jun 2025",
@@ -409,6 +411,7 @@ const sahilData = {
       {
         id: "capgemini-intern",
         title: "Software Engineering Intern",
+        type: "experience",
         company: "Capgemini",
         logo: "/logos/capgemini.png",
         logoSize: 128,
