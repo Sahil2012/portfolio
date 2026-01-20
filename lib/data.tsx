@@ -172,7 +172,7 @@ const himanshuData = {
   currentCompany: "RapidStart",
   companyUrl: "https://www.rapidstart.net/",
   calLink: "https://cal.com/himanshu-jaroli-cjbeah/30min",
-  resume: "/himanshu-resume.pdf",
+  resume: "/resume/himanshu.pdf",
   email: "jaroli.himanshu.work@gmail.com",
   image: "/himanshu.png",
   logo: "/himanshu-square.png",
@@ -240,63 +240,87 @@ const himanshuData = {
     subline2: "Full-time roles and career milestones.",
     items: [
       {
-        id: "rapidstart",
-        title: "Senior Full Stack Developer",
-        company: "Rapidstart",
-        logo: "/logos/rapidstart.svg",
-        duration: "Jan 2023 - Present",
+        id: "novacrafts",
+        type: "experience",
+        title: "Co-Founder and Lead Engineer",
+        company: "NovaCrafts.AI",
+        logo: "/logos/novacraftsai.png",
+        duration: "Nov 2025 - Present",
         description:
-          "Leading development of enterprise SaaS applications, architecting scalable solutions, and mentoring junior developers.",
-        technologies: ["React", "Node.js", "TypeScript", "PostgreSQL", "AWS"],
-        achievements: [
-          "Reduced API response time by 60% through optimization",
-          "Led migration to microservices architecture",
-          "Implemented CI/CD pipeline reducing deployment time by 80%",
+          "Co-founded a custom software agency driving technical strategy and end-to-end delivery for client solutions and internal ventures, ranging from rapid MVP development to full-scale application architectures.",
+      },
+      {
+        id: "rapidstart",
+        type: "experience",
+        title: "Software Development Engineer 2",
+        company: "Rapidstart Pty. Ltd.",
+        logo: "/logos/rapidstart.svg",
+        duration: "Mar 2025 - Oct 2025",
+        description:
+          "Engineered AI powered ecosystems for orchestrating dynamic task chaining, Voice calling Agents and vision-based autonomous systems capable of executing complex computer operations.",
+        testimonials: [
+          {
+            name: "Mo Hassan",
+            content:
+              "Himanshu is a focused engineer who consistently delivers complex technical requirements with minimal supervision. He successfully took ownership of our multi-agent infrastructure, scaling our AI phone backend to handle over 10k+ monthly calls.",
+          },
         ],
       },
       {
         id: "tcs",
-        title: "Full Stack Developer",
+        type: "experience",
+        title: "Product Engineer",
         company: "Tata Consultancy Services",
         logo: "/logos/tcs.png",
-        duration: "Jul 2021 - Dec 2022",
+        duration: "Aug 2022 - Feb 2025",
         description:
-          "Developed and maintained enterprise applications for Fortune 500 clients, focusing on scalability and performance.",
-        technologies: ["Angular", "Java", "Spring Boot", "MySQL", "Docker"],
-        achievements: [
-          "Delivered 5+ client projects on time and within budget",
-          "Improved application performance by 40%",
-          "Mentored 3 junior developers",
+          "Developed enterprise SaaS platforms for Product Delivery and talent engagement, engineering interactive AI workbenches, in-browser code editors, and RAG-based agents capable of assisting complex user workflows.",
+        description2:
+          "Engineered a low-code development platform and custom VS Code extension ecosystem capable of transforming high-level user intent into full-stack digital experiences.",
+        awards: ["Young Innovator", "Start performer of the month"],
+        testimonials: [
+          {
+            name: "Rohan Hirekerur",
+            content:
+              "As a Product Engineer, I've seen firsthand his exceptional problem-solving skills, attention to detail, and commitment to writing clean, maintainable code. He bring a collaborative and proactive approach to every project, making them a valuable asset to any team.",
+          },
         ],
+      },
+      {
+        id: "bharati",
+        type: "education",
+        title: "Computer Science and Business Systems",
+        university: "Bharati Vidyapeeth University",
+        logo: "/logos/bvp.png",
+        duration: "Jul 2018 - Aug 2022",
+        grade: 9.26,
+        awards: ["Startup Conclave 2021, EDC Pune - Wisey"],
       },
       {
         id: "tcs-intern",
+        type: "experience",
         title: "Software Engineering Intern",
         company: "Tata Consultancy Services",
         logo: "/logos/tcs.png",
-        duration: "Jan 2021 - Jun 2021",
+        duration: "Jun 2021 - Aug 2021",
         description:
           "Contributed to full-stack development projects, learned industry best practices, and collaborated with cross-functional teams.",
-        technologies: ["React", "Node.js", "MongoDB", "Express"],
-        achievements: [
-          "Built internal tool used by 50+ team members",
-          "Received pre-placement offer",
-          "Completed training in Agile methodologies",
-        ],
       },
       {
         id: "humaps-intern",
-        title: "Frontend Development Intern",
+        type: "experience",
+        title: "Full-Stack Developer Intern",
         company: "Humaps",
         logo: "/logos/humaps.png",
-        duration: "Jun 2020 - Dec 2020",
+        duration: "Jan 2021 - Mar 2021",
         description:
-          "Developed responsive web interfaces and collaborated with designers to create intuitive user experiences.",
-        technologies: ["React", "JavaScript", "CSS3", "Figma"],
-        achievements: [
-          "Redesigned company website increasing user engagement by 35%",
-          "Implemented responsive design across all pages",
-          "Created reusable component library",
+          "Developed responsive web interfaces, intuitive user experiences and suite of Rest APIs to support a hyperlocal e-commerce platform.",
+        testimonials: [
+          {
+            name: "Anup Routray",
+            content:
+              "I have worked with Himanshu and have found him to be deligent, hardworking and honest. His programming skills are good, on top of that he has a very special spark, and I trust he will go far in making our world a better place.",
+          },
         ],
       },
     ],
@@ -310,7 +334,8 @@ const sahilData = {
   currentCompany: "HSBC",
   companyUrl: "https://www.hsbc.com/",
   calLink: "https://cal.com/sahil-gupta-7/15min?overlayCalendar=true",
-  resume: "https://drive.google.com/file/d/1oVp1wjGylHoye7SxgcwJee4LXr7s_hDu/view?usp=drive_link",
+  resume:
+    "https://drive.google.com/file/d/1oVp1wjGylHoye7SxgcwJee4LXr7s_hDu/view?usp=drive_link",
   image: "/sahil.png",
   logo: "/sahil-fav.png",
   navigation: [
@@ -367,24 +392,10 @@ const sahilData = {
         title: "Senior Software Engineer",
         company: "HSBC",
         logo: "/logos/hsbc.png",
+        logoSize: 128,
         duration: "Jun 2025 - Present",
         description:
           "Building core Prime Finance systems that process high-volume trade and position data across global markets, supporting pricing, margining, and financing workflows at scale.",
-        technologies: [
-          "Java",
-          "Reactive Java",
-          "Micronaut",
-          "GCP",
-          "BigQuery",
-          "Terraform",
-        ],
-        achievements: [
-          "Built microservices for the Financing Against Securities platform serving global Prime Finance trade and position data",
-          "Designed an SOI service aggregating instrument identifiers across multiple trading systems to enable consistent pricing and margin workflows",
-          "Reworked OTC trade processing to a streaming model, reducing memory usage by ~40% and improving stability during peak trading hours",
-          "Improved data access by partitioning high-volume tables and enhancing ingestion APIs, reducing read latency by ~30%",
-          "Migrated Sophis IA, MTM/EOD, and OTC services to a non-blocking, reactive execution model, improving performance and resiliency",
-        ],
       },
       {
         id: "tcs",
@@ -394,36 +405,16 @@ const sahilData = {
         duration: "Jul 2022 - Jun 2025",
         description:
           "Worked on enterprise SaaS platforms focused on developer productivity, security assessments, and AI-assisted workflows.",
-        technologies: [
-          "Java",
-          "Spring Boot",
-          "Spring Cloud",
-          "React",
-          "Azure",
-          "OpenAI",
-          "Docker",
-        ],
-        achievements: [
-          "Developed REST APIs for code validation and assessment workflows, improving platform reliability and security",
-          "Integrated GPT-3.5 and GPT-4 to power automated code-generation features, reducing job execution time by ~62%",
-          "Built AI-driven agents to reduce noise in assessment results while maintaining licensing compliance",
-          "Integrated security and functional assessment pipelines using Fortify, SonarQube, JUnit, JaCoCo, and Azure DevOps",
-          "Received the TCS Innovation Award for contributions to auto-spec generation in the Glow framework",
-        ],
       },
       {
         id: "capgemini-intern",
         title: "Software Engineering Intern",
         company: "Capgemini",
         logo: "/logos/capgemini.png",
+        logoSize: 128,
         duration: "Feb 2022 - May 2022",
         description:
           "Contributed to internal platforms by building user-facing features that improved discoverability and engagement.",
-        technologies: ["React", "Tailwind CSS", "JavaScript"],
-        achievements: [
-          "Built a course management dashboard, improving enrollment visibility and reducing support queries",
-          "Improved platform engagement by ~25% through UI and UX enhancements",
-        ],
       },
     ],
   },
