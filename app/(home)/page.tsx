@@ -77,7 +77,7 @@ export default function Home() {
             transition={{ duration: 0.4, delay: 0.3, ease: "easeOut" }}
             className="absolute flex bottom-0 right-0 justify-center lg:justify-end items-end h-full w-full sm:w-5/6 md:w-2/3 lg:w-1/2"
           >
-            <div className="relative w-full h-full">
+            <div className="relative w-full h-full max-w-[1000px]">
               <Image
                 src={data.image}
                 alt={data.fullName}
