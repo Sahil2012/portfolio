@@ -5,17 +5,17 @@ const profile = process.env.NEXT_PUBLIC_PROFILE;
 
 const commonData = {
   builds: {
-    title: "Builds",
-    subline1: "Tools that solve real problems.",
+    title: "Initiatives",
+    subline1: "Products & Businesses that solve real problems.",
     subline2:
       "From automating job applications to crafting custom software solutions.",
     items: [
       {
-        id: "naukri",
-        title: "Naukri Outreach",
+        id: "refermate",
+        title: "ReferMate",
         description:
           "A SaaS tool that simplifies the referral process by automating outreach workflows and generating context-aware referral and follow-up messages tailored to the company, role, and job description using AI.",
-        href: "https://outreach-landing.vercel.app/",
+        href: "https://refermate.novacraftsai.com/",
         actionText: "See the Tool",
         gradient: "from-emerald-500/10 via-teal-500/10 to-blue-500/10",
         image: "/naukri-outreach.png",
@@ -39,11 +39,13 @@ const commonData = {
       "From automating job applications to crafting custom software solutions.",
     items: [
       {
-        id: "remember-publisher",
-        name: "Remember Publisher",
+        id: "remember-press",
+        name: "Remember Press",
         category: "AI-Assisted Writing Platform",
         description:
-          "Built a writing platform that helps people turn raw thoughts into structured books by using AI to refine, organize, and enhance personal writing.",
+          `Remember Press is an AI-powered writing platform that helps users transform raw thoughts and notes into structured books. 
+          
+          The system uses LLMs to refine, organize, and expand personal writing while maintaining the user's original voice.`,
         technologies: [
           "React.js",
           "TypeScript",
@@ -56,14 +58,16 @@ const commonData = {
         featured: false,
         image: "/backgrounds/remember-publisher.png",
         logo: "/logos/remember-press.png",
-        website: "https://landing-remember-publisher.vercel.app/",
+        website: "https://landing.rememberpress.com/",
       },
       {
         id: "afm",
         name: "Asia Forex Mentor",
         category: "AI Automation & Workflows",
         description:
-          "Built AI-powered automation workflows to support lead generation, outreach, SEO-driven content updates, and customer support using n8n and LLMs.",
+          `AFM is a coaching organisation that specialized in Forex-trading. 
+          
+          We helped them build several AI-powered automation workflows to support lead generation, outreach, SEO-driven content updates, and customer support using n8n and LLMs.`,
         technologies: ["n8n", "OpenAI", "Python", "Render"],
         year: "2024",
         featured: true,
@@ -72,67 +76,34 @@ const commonData = {
         website: "https://asiaforexmentor.com/",
       },
       {
-        id: "valerie-ai",
-        name: "Valerie.ai",
-        category: "AI Voice Assistant · Business Automation",
-        description:
-          "Built features for a 24/7 AI voice assistant that answers, qualifies, books, and follows up on inbound calls, helping businesses capture leads and schedule bookings without missed opportunities.",
-        technologies: [
-          "AI Voice",
-          "CRM Integrations",
-          "Calendar Sync",
-          "Natural Language Processing",
-        ],
-        year: "2023",
-        featured: true,
-        image: "/backgrounds/valerie-ai.png",
-        logo: "/logos/valerie.svg",
-        website: "https://valerie.ai/",
-      },
-      {
-        id: "yash-bikes",
-        name: "Yash Bikes",
-        category: "E-commerce",
-        description:
-          "Built a custom commerce platform for a premium bike rental company, enabling online sales, inventory management, and service bookings through a single, streamlined system.",
-        technologies: ["Next.js", "Stripe", "Prisma", "PostgreSQL"],
-        year: "2024",
-        featured: true,
-        image: "/backgrounds/yash-bikes.png",
-        logo: "/logos/yash-bikes.png",
-        website: "https://yashbikes.vercel.app/",
-      },
-      {
-        id: "grief-navigator",
-        name: "Grief Navigator",
-        category: "Mobile App · Mental Health",
-        description:
-          "Built an end-to-end mobile application to support people through their grief journey, including journaling, guided activities, and secure sharing of progress and reports with licensed psychologists.",
-        technologies: [
-          "React Native",
-          "TypeScript",
-          "Expo",
-          "Azure",
-          "SpringBoot",
-        ],
-        year: "2024",
-        featured: false,
-        image: "/backgrounds/grief-navigator.png",
-        logo: "/logos/grief-navigator.png",
-        website: "https://play.google.com/",
-      },
-      {
         id: "disability-dynamics",
         name: "Disability Dynamics",
         category: "Web Platform · Accessibility",
         description:
-          "Designed and developed an accessibility-first platform providing structured resources and support tools for individuals with disabilities, with a focus on clarity, compliance, and real-world usability.",
+          `Disability Dynamics is independent living space provider for specially abled people. 
+          
+          We designed and developed an accessibility-first and SEO optimized marketing page which is optimized for higher conversion rates and special focus on clarity, compliance, and real-world usability.`,
         technologies: ["Next.js", "TypeScript", "Prisma"],
         year: "2024",
         featured: false,
         image: "/backgrounds/disability-dynamics.png",
         logo: "/logos/disability-dynamics.png",
         website: "https://www.disabilitydynamics.com.au/",
+      },
+      {
+        id: "yash-bikes",
+        name: "Yash Bikes",
+        category: "E-commerce",
+        description:
+          `Yash Bikes is a hyperlocal bike rental company based in Pune. 
+          
+          We helped them build a custom marketing platform which helped them boost their online sales, and service bookings through a single, streamlined system.`,
+        technologies: ["Next.js", "Stripe", "Prisma", "PostgreSQL"],
+        year: "2024",
+        featured: true,
+        image: "/backgrounds/yash-bikes.png",
+        logo: "/logos/yash-bikes.png",
+        website: "https://yashbikes.vercel.app/",
       },
     ],
   },
@@ -182,7 +153,7 @@ const himanshuData = {
     linkedin: "https://www.linkedin.com/in/himanshu-jaroli/",
   },
   navigation: [
-    { label: "Builds", href: "/builds" },
+    { label: "Initiatives", href: "/initiatives" },
     { label: "Client Projects", href: "/client-projects" },
     { label: "Changelog", href: "/changelog" },
     { label: "Contact", href: "/contact" },
@@ -201,10 +172,10 @@ const himanshuData = {
       <span>
         Currently building{" "}
         <Link
-          href="https://Naukri-outreach.vercel.app/"
+          href="https://refermate.novacraftsai.com/"
           className="hover:opacity-80 transition-opacity"
         >
-          <Highlight className="text-foreground">Naukri Outreach</Highlight>
+          <Highlight className="text-foreground">ReferMate</Highlight>
         </Link>{" "}
         and{" "}
         <Link
@@ -215,10 +186,10 @@ const himanshuData = {
         </Link>
         , while engineering production systems at{" "}
         <Link
-          href="https://www.rapidstart.net/"
+          href="https://www.tcs.com/"
           className="hover:opacity-80 transition-opacity"
         >
-          <Highlight className="text-foreground">RapidStart</Highlight>
+          <Highlight className="text-foreground">TCS</Highlight>
         </Link>
         .
       </span>
@@ -239,6 +210,17 @@ const himanshuData = {
     subline1: "My professional journey.",
     subline2: "Full-time roles and career milestones.",
     items: [
+      {
+        id: "tcs",
+        type: "experience",
+        title: "Senior Software Engineer",
+        company: "Tata Consultancy Services",
+        logo: "/logos/tcs.png",
+        duration: "Dec 2023 - Present",
+        description:
+          "Developed enterprise SaaS platform for Product Delivery and talent engagement, engineering interactive AI workbenches, in-browser code editors, and RAG-based agents capable of assisting complex user workflows.",
+        awards: ["Young Innovator"],
+      },
       {
         id: "novacrafts",
         type: "experience",
@@ -269,15 +251,13 @@ const himanshuData = {
       {
         id: "tcs",
         type: "experience",
-        title: "Product Engineer",
+        title: "Software Engineer",
         company: "Tata Consultancy Services",
         logo: "/logos/tcs.png",
-        duration: "Aug 2022 - Feb 2025",
+        duration: "Aug 2022 - Nov 2023",
         description:
-          "Developed enterprise SaaS platforms for Product Delivery and talent engagement, engineering interactive AI workbenches, in-browser code editors, and RAG-based agents capable of assisting complex user workflows.",
-        description2:
           "Engineered a low-code development platform and custom VS Code extension ecosystem capable of transforming high-level user intent into full-stack digital experiences.",
-        awards: ["Young Innovator", "Start performer of the month"],
+        awards: ["Start performer of the month"],
         testimonials: [
           {
             name: "Rohan Hirekerur",
@@ -340,7 +320,7 @@ const sahilData = {
   email: "sahilhsgupta7@gmail.com",
   logo: "/sahil-fav.png",
   navigation: [
-    { label: "Builds", href: "/builds" },
+    { label: "Initiatives", href: "/initiatives" },
     { label: "Projects", href: "/client-projects" },
     { label: "Changelog", href: "/changelog" },
     { label: "Writings", href: "/writings" },

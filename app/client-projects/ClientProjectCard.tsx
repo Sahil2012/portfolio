@@ -48,7 +48,7 @@ const ClientProjectCard = ({
             {/* Content Container */}
             <div className="text-left mt-18 sm:mt-24 md:mt-28 flex flex-col gap-4 w-3xs sm:w-2xs md:w-md">
               {/* Description */}
-              <p className="text-sm md:text-lg font-semibold leading-relaxed text-white">
+              <p className="text-sm md:text-lg font-semibold leading-relaxed text-white whitespace-pre-line">
                 {project.description}
               </p>
             </div>
