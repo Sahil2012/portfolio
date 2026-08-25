@@ -18,7 +18,7 @@ const commonData = {
         href: "https://refermate.novacraftsai.com/",
         actionText: "See the Tool",
         gradient: "from-emerald-500/10 via-teal-500/10 to-blue-500/10",
-        image: "/naukri-outreach.png",
+        image: "/refermate.png",
       },
       {
         id: "novacrafts",
@@ -328,7 +328,7 @@ const sahilData = {
   companyUrl: "https://www.hsbc.com/",
   calLink: "https://cal.com/sahil-gupta-7/15min?overlayCalendar=true",
   resume:
-    "https://drive.google.com/file/d/1oVp1wjGylHoye7SxgcwJee4LXr7s_hDu/view?usp=drive_link",
+    "https://drive.google.com/file/d/1qc61Ic-1tLIaUeBwncEAFgNnyvWdjGvy/view?usp=sharing",
   image: "/sahil.png",
   email: "sahilhsgupta7@gmail.com",
   logo: "/sahil-fav.png",
@@ -344,16 +344,45 @@ const sahilData = {
     twitter: "https://x.com/guptasahil7/",
     linkedin: "https://www.linkedin.com/in/sahil-gupta7/",
   },
+  clientProjects: {
+    ...commonData.clientProjects,
+    items: [
+      {
+        id: "dealclarity",
+        name: "DealClarity",
+        category: "AI-Powered SaaS · M&A",
+        description:
+          `DealClarity gives independent business buyers a fast, data-backed read on what a company is actually worth before they sign a Letter of Intent.
+
+          Built a multi-agent AI pipeline that parses uploaded financials to produce normalized EBITDA, blended valuation multiples, and DSCR feasibility checks — turning a multi-week diligence process into a report generated in minutes.`,
+        technologies: [],
+        year: "2026",
+        featured: true,
+        image: "/backgrounds/dealclarity.png",
+        logo: "/logos/dealclarity.png",
+        website: "https://dealclarity.ai/",
+      },
+      ...commonData.clientProjects.items,
+    ],
+  },
   home: {
-    title: "Building & shipping\nreal-world products.",
+    title: (
+      <span>
+        Building & shipping
+        <br />
+        <span className="text-gray-600 dark:text-gray-400">
+          real-world products.
+        </span>
+      </span>
+    ),
     subline: (
       <span>
         Currently building{" "}
         <Link
-          href="https://Naukri-outreach.vercel.app/"
+          href="https://refermate.novacraftsai.com/"
           className="hover:opacity-80 transition-opacity"
         >
-          <Highlight className="text-foreground">Naukri Outreach</Highlight>
+          <Highlight className="text-foreground">ReferMate</Highlight>
         </Link>{" "}
         and{" "}
         <Link
@@ -417,7 +446,7 @@ const sahilData = {
   },
   writings: {
     title: "Writings.",
-    subline1: "Thoughts on engineering, security, and system design.",
+    subline1: "Thoughts on backend engineering, applied AI, and system design.",
     subline2: (
       <span>
         Read more on{" "}
@@ -431,6 +460,49 @@ const sahilData = {
       </span>
     ),
     articles: [
+      {
+        id: "ai-fundamentals-4",
+        title:
+          "Introduction to AI Fundamentals for Engineers, Stupid Simple: Part 4",
+        excerpt:
+          "In Part 3 we turned text into numbers — tokens, embeddings, positions. Now let's see what models actually do with that numerical data: transformers, attention mechanisms, and the KV cache optimization that makes inference fast.",
+        date: "Aug 6, 2026",
+        readTime: "8 min read",
+        tags: ["Applied AI", "Transformers"],
+        url: "https://medium.com/@sahilhsgupta7/introduction-to-ai-fundamentals-for-engineers-stupid-simple-part-4-cc7ef8dae5eb",
+      },
+      {
+        id: "ai-fundamentals-3",
+        title:
+          "Introduction to AI Fundamentals for Engineers, Stupid Simple: Part 3",
+        excerpt:
+          "Continuing from RNNs and LSTMs, we tackle a critical challenge: turning text into a numerical form models can actually process — tokenization, embeddings, and positional encoding, explained intuitively.",
+        date: "Aug 4, 2026",
+        readTime: "7 min read",
+        tags: ["Applied AI", "NLP"],
+        url: "https://medium.com/@sahilhsgupta7/introduction-to-ai-fundamentals-for-engineers-stupid-simple-part-3-fa487b81d610",
+      },
+      {
+        id: "ai-fundamentals-2",
+        title:
+          "Introduction to AI Fundamentals for Engineers, Stupid Simple: Part 2",
+        excerpt:
+          "Picking up from models, gradient descent, loss functions, and learning rate, we build intuition for neural networks & neurons, forward pass & activation functions, backpropagation, RNNs, and LSTMs.",
+        date: "Jul 26, 2026",
+        readTime: "7 min read",
+        tags: ["Applied AI", "Neural Networks"],
+        url: "https://medium.com/@sahilhsgupta7/introduction-to-ai-fundamentals-for-engineers-stupid-simple-part-2-745882ab8dca",
+      },
+      {
+        id: "ai-fundamentals-1",
+        title: "Introduction to AI Fundamentals for Engineers, Stupid Simple",
+        excerpt:
+          "A no-textbook-definitions foundation for Applied AI Engineering — building intuition for models, gradient descent, loss functions, and the learning rate.",
+        date: "Jul 25, 2026",
+        readTime: "6 min read",
+        tags: ["Applied AI", "Machine Learning"],
+        url: "https://medium.com/@sahilhsgupta7/introduction-to-ai-fundamentals-for-engineers-stupid-simple-a048744db52c",
+      },
       {
         id: "cors-guide",
         title: "What is CORS? Why is it important?",

@@ -1,33 +1,60 @@
 "use client";
 
+import { useState } from "react";
 import ContentLayout from "@/components/ContentLayout";
 import { data } from "@/lib/data";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import Link from "next/link";
-import { Calendar, Clock, ArrowUpRight } from "lucide-react";
+import { Calendar, Clock, ArrowUpRight, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { motion } from "motion/react";
+import { cn } from "@/lib/utils";
+
+// Rows visible before "Read more" per breakpoint (1 / 2 / 3 columns).
+const INITIAL_ROWS = 2;
+const VISIBLE = {
+  mobile: INITIAL_ROWS * 1,
+  sm: INITIAL_ROWS * 2,
+  lg: INITIAL_ROWS * 3,
+};
 
 export default function WritingsPage() {
+  const [expanded, setExpanded] = useState(false);
+
   if (!data?.writings?.articles) return null;
-  
+
+  const articles = data.writings.articles;
+  const hasMore = articles.length > VISIBLE.mobile;
+
   return (
     <ContentLayout
       title={data.writings.title}
       subline1={data.writings.subline1}
       subline2={data.writings.subline2}
     >
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 pb-20">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {/* @ts-ignore */}
-        {data.writings.articles?.map((article, index: number) => (
+        {articles?.map((article, index: number) => (
           <motion.div
             key={article.id}
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.4, delay: (index % 3) * 0.1, ease: "easeOut" }}
+            className={cn(
+              !expanded && index >= VISIBLE.mobile && "hidden",
+              !expanded &&
+                index >= VISIBLE.mobile &&
+                index < VISIBLE.sm &&
+                "sm:block",
+              !expanded &&
+                index >= VISIBLE.sm &&
+                index < VISIBLE.lg &&
+                "lg:block"
+            )}
           >
+
             <Link
               href={article.url}
               target="_blank"
@@ -87,6 +114,27 @@ export default function WritingsPage() {
           </motion.div>
         ))}
       </div>
+
+      {hasMore && !expanded && (
+        <div
+          className={cn(
+            "flex justify-center pt-10",
+            articles.length <= VISIBLE.sm && "sm:hidden",
+            articles.length <= VISIBLE.lg && "lg:hidden"
+          )}
+        >
+          <Button
+            variant="outline"
+            className="rounded-full gap-2"
+            onClick={() => setExpanded(true)}
+          >
+            Read more
+            <ChevronDown className="w-4 h-4" />
+          </Button>
+        </div>
+      )}
+
+      <div className="pb-20" />
     </ContentLayout>
   );
 }
