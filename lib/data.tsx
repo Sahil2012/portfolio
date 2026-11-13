@@ -36,7 +36,7 @@ const commonData = {
     title: "Client Projects.",
     subline1: "Projects I've worked on.",
     subline2:
-      "From automating job applications to crafting custom software solutions.",
+      "From M&A analysis pipelines to enterprise automations.",
     items: [
       {
         id: "dealclarity",
@@ -224,7 +224,7 @@ const himanshuData = {
   changelog: {
     title: "Changelog.",
     subline1: "My professional journey.",
-    subline2: "Full-time roles and career milestones.",
+    subline2: "Full-time roles, career milestones and everything in between.",
     items: [
       {
         id: "toptal",
@@ -238,7 +238,7 @@ const himanshuData = {
         toptalBadge: true,
       },
       {
-        id: "tcs",
+        id: "tcs-pe",
         type: "experience",
         title: "Product Engineer",
         company: "Tata Consultancy Services",
@@ -276,7 +276,7 @@ const himanshuData = {
         ],
       },
       {
-        id: "tcs",
+        id: "tcs-se",
         type: "experience",
         title: "Software Engineer",
         company: "Tata Consultancy Services",
